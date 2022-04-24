@@ -1,4 +1,6 @@
 import io
+import login
+
 
 """
     Module: userInterface
@@ -8,11 +10,12 @@ import io
 """
 
 def start():
+    print()
     print("========================================")
     print("  Welcome to FrankFest Music Festival   ")
     print("========================================")
     print()
     print("Please login with valid email to continue")
+    userName = login.login()
 
-    #Prompt user login here
     #Run the app after successful login

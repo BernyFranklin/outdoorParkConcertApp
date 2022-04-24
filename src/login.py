@@ -35,4 +35,3 @@ def isValid(email):
         return False
 
 
-login()
