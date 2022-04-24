@@ -31,21 +31,55 @@ def runApp(userName):
 
     # Store userName for purchase info
     user = userName
-
-    print("========================================")
-    print("Welcome " + user)
-    print()
-    print("Please select from the following options")
-    print("[V] View Seating")
-    print("[B] Buy tickets")
-    print("[S] Search by email")
-    print("[D] Display all purchases")
-    print("[Q] Quit")
-    print("========================================")
     
-    userOption = input("Please enter a command: ")
-    lowerOption = userOption.lower()
-    firstChar = lowerOption[0:1]
+    # Prime loop
+    userQuit = False
+
+    # Start menu loop
+    while not userQuit:
+
+        print("========================================")
+        print("Welcome " + user)
+        print()
+        print("Please select from the following options")
+        print("[V] View Seating")
+        print("[B] Buy tickets")
+        print("[S] Search by email")
+        print("[D] Display all purchases")
+        print("[Q] Quit")
+        print("========================================")
+        
+        # Collect userOption, covert to lower, and take firstChar
+        userOption = input("Please enter a command: ")
+        upperOption = userOption.upper()
+        firstChar = upperOption[0:1]
+
+        # Proceed to menu choices
+
+        # [V]
+        if firstChar == 'V':
+            print("View seating selected")
+
+        # [B]
+        elif firstChar == 'B':
+            print("Buy tix selected")
+
+        # [S]
+        elif firstChar == 'S':
+            print("Search selected")
+
+        # [D]
+        elif firstChar == 'D':
+            print("Display purchases selected")
+
+        # [Q]
+        elif firstChar == 'Q':
+            print("Thank you for using the FrankFest App")
+            userQuit = True
+
+        # Invalid
+        else:
+            print("Invlid selection, please try again")
 
 
 
