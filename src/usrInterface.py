@@ -1,6 +1,6 @@
 import io
 import login
-import re
+import tickets
 
 
 
@@ -64,26 +64,8 @@ def runApp(userName):
 
         # [B]
         elif firstChar == 'B':
-            # Prime loop
-            number = False
-            positive = False
-            while not number and not positive:
-                try:
-                    qtyOfTix = input("Please enter how many tickets you would like to purchase: ")
-                    number = isNumeric(qtyOfTix)
-                    if int(qtyOfTix) > 0:
-                        positive = True
-                    elif int(qtyOfTix) == 0:
-                        print("Zero tickets selected, returning to main menu")
-                        print()
-                        break
-                    else:
-                        print("Number of tickets must be positive number")
-                        print()
-
-                except ValueError:
-                    print("Please enter numbers only")
-                    print()
+            # Call tickets.quantity for numeric verification
+            qtyOfTix = tickets.quantity()
             
             # Return to main menu if zero tickets purchased
             if int(qtyOfTix) == 0:
@@ -114,13 +96,6 @@ def runApp(userName):
         else:
             print("Invlid selection, please try again")
 
-def isNumeric(qty):
-    numeric = re.compile(r'([0-9])+')
-
-    if re.fullmatch(numeric, qty):
-        return True
-    else:
-        return False
 
 
 
