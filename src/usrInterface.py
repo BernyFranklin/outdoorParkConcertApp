@@ -70,14 +70,20 @@ def runApp(userName):
             # Return to main menu if zero tickets purchased
             if int(qtyOfTix) == 0:
                 continue
-                
-            print()
-            print("Please select a section")
-            print("[F] Front  $80")
-            print("[M] Middle $50")
-            print("[B] Back   $25")
             
-            userSection = input("Enter a selection: ")
+            # Call tickets.section for char selection
+            selectedSection = tickets.section()
+
+            # Test print
+            print("User selected: " + selectedSection)
+            print()
+            # Calculate totals
+            if selectedSection == 'F':
+                print("I need to calculate the Front total")
+            elif selectedSection == 'M':
+                print("I need to calculate the Middle total")
+            elif selectedSection == 'B':
+                print("I need to calculate the Back total")
 
         # [S]
         elif firstChar == 'S':
