@@ -28,7 +28,29 @@ def read():
     # Return variable to caller
     return data
 
-# Test output
-data = read()
+def status(row, col):
+    """
+    This function takes row and col as parameters and returns status of that seat
+    """
+    # Read json into a variable
+    data = read()
 
-print(data)
+    # Create empty dictionary
+    seatingDict = {}
+
+    # Read data into dictionary
+    for elem in data:
+        r = elem["row"]
+        c = elem["col"]
+        s = elem["status"]
+
+        # Set key values to status
+        seatingDict[(r, c)] = s
+
+    # Get status of seat stated in params
+    stat = seatingDict[(row, col)]
+    # Return status of seat
+    return stat
+
+stat = status(1, 4)
+print(stat)
