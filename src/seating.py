@@ -30,7 +30,9 @@ def read():
 
 def status(row, col):
     """
-    This function takes row and col as parameters and returns status of that seat
+    This function uses the read() function to store the JSON file into a variable. 
+    Then the data is read into an empty dictionary.
+    Seat selection status displayed based on params row and col
     """
     # Read json into a variable
     data = read()
@@ -47,10 +49,14 @@ def status(row, col):
         # Set key values to status
         seatingDict[(r, c)] = s
 
-    # Get status of seat stated in params
-    stat = seatingDict[(row, col)]
+    # Get status of seat stated in params, if seat doesn't exist raise error
+    try:
+        stat = seatingDict[(row, col)]
+        return stat
+    except KeyError:
+        return "Seat selection out of range"
     # Return status of seat
-    return stat
+    #return stat
 
-stat = status(1, 4)
+stat = status(30, 7)
 print(stat)
