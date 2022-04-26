@@ -1,6 +1,7 @@
 import io
 import login
 import tickets
+import seating
 
 
 
@@ -60,7 +61,7 @@ def runApp(userName):
 
         # [V]
         if firstChar == 'V':
-            print("View seating selected")
+           seating.displaySeatingChart() 
 
         # [B]
         elif firstChar == 'B':
@@ -95,7 +96,7 @@ def runApp(userName):
 
         # [Q]
         elif firstChar == 'Q':
-            print("Thank you for using the FrankFest App")
+            print("Thank you for using the FrankFest App\n")
             userQuit = True
 
         # Invalid
