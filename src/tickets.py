@@ -74,3 +74,33 @@ def isNumeric(qty):
         return True
     else:
         return False
+
+def compute(qty, section):
+    """
+    This module computes the total price and returns the total
+    """
+
+    q = qty         # Sent from UI
+    s = section     # Sent from UI, can only be F, M, or B
+    tax = 0.0725    # Tax rate at 7.25% 
+    fee = 5.0       # $5 Masking fee
+
+    # Establish which ticket price to use
+    if s == 'F':        # Front
+        price = 80.0
+    elif s ==  'M':     # Middle
+        price = 50.0
+    else:               # Back
+        price = 25.0
+
+    # Compute total
+    subTotal = q * s
+    totalTax = subTotal * tax
+    finalTotal = subTotal + totalTax + fee
+
+    return finalTotal
+
+    
+
+
+
