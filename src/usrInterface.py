@@ -79,12 +79,7 @@ def runApp(userName):
             print("User selected: " + selectedSection)
             print()
             # Calculate totals
-            if selectedSection == 'F':
-                print("I need to calculate the Front total")
-            elif selectedSection == 'M':
-                print("I need to calculate the Middle total")
-            elif selectedSection == 'B':
-                print("I need to calculate the Back total")
+            total = tickets.compute(qtyOfTix, selectedSection)
 
         # [S]
         elif firstChar == 'S':

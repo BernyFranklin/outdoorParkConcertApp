@@ -88,16 +88,31 @@ def compute(qty, section):
     # Establish which ticket price to use
     if s == 'F':        # Front
         price = 80.0
+        sString = "Front"
     elif s ==  'M':     # Middle
         price = 50.0
+        sString = "Middle"
     else:               # Back
         price = 25.0
+        sString = "Back"
 
     # Compute total
-    subTotal = q * s
+    subTotal = int(q) * price
     totalTax = subTotal * tax
     finalTotal = subTotal + totalTax + fee
 
+    # Print subtotal
+    print("========================================")
+    print("         Transaction Summary\n")
+    print("Qty:         ", str(q), " @ ", str("$ {:.2f}".format(price)))
+    print("Section:             ", str(sString))
+    print("Subtotal:           $", str("{:.2f}".format(subTotal)))
+    print("Tax:                $", str("{:.2f}".format(totalTax)))
+    print("Mandatory Mask Fee: $", str("{:.2f}".format(fee)))
+    print("\n")
+    print("Total:              $", str("{:.2f}".format(finalTotal)))
+
+    # Return final total for transaction object
     return finalTotal
 
     
