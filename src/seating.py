@@ -57,7 +57,6 @@ def status(row, col):
     except KeyError:
         return "Seat selection out of range"
     # Return status of seat
-    #return stat
 
 def displaySeatingChart():
     """
@@ -146,9 +145,9 @@ def seatSearch(numberOfSeats, section):
             elif (status(row, col) == 'x') or (status(row,col) == 'n'):
                 # Reset counter and keep looking
                 seatsSearched = 0
-            
-    # No seats found in that quantity
-    return "No seats available in this section for qty requested"
+            elif (row == endRow-1) and (col == 25) and (seatsSearched != seatsRequested):
+                return 0
+    
 
 def updateSeatingChart(seatList):
     """
@@ -203,8 +202,6 @@ def updateSeatingChart(seatList):
     with open("seating.json", "w") as outfile:
         outfile.write(jsonObject)
 
-    #print(updatedSeatingList)
-
 def reinitializeJson():
     """
     This function reinitiliazes the json to display an empty venue.
@@ -238,3 +235,5 @@ def reinitializeJson():
 
 
 
+seats = seatSearch(5, 'F')
+print(seats)

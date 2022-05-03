@@ -74,12 +74,14 @@ def runApp(userName):
             
             # Call tickets.section for char selection
             selectedSection = tickets.section()
-
-            # Test print
-            print("User selected: " + selectedSection)
-            print()
-            # Calculate totals
-            total = tickets.compute(qtyOfTix, selectedSection)
+            # Search for seats in that section, store seats
+            seats = seating.seatSearch(int(qtyOfTix), selectedSection)
+            # If no seats available break out
+            if seats == 0:
+                print("There aren't any seats left in that section for qty requested")
+            else:
+                total = tickets.compute(qtyOfTix, selectedSection)
+                seating.updateSeatingChart(seats)
 
         # [S]
         elif firstChar == 'S':

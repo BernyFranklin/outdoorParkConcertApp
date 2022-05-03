@@ -34,17 +34,3 @@ json_object = json.dumps(seatingDict, indent = 4)
 with open("test.json", "w") as outfile:
     outfile.write(json_object)
 #print(seatingDict)
-"""
-for rows in row:
-
-    for cols in col:
-        print("\t{")
-        print("\t\t\"row\":", rows, ",")
-        print("\t\t\"col\":", cols, ",")
-        if rows%2 == 0:
-            print("\t\t\"status\": \"a\"")
-        else:
-            print("\t\t\"status\": \"x\"")
-        print("\t},\n")
-
-"""
