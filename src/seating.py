@@ -94,3 +94,40 @@ def displaySeatingChart():
         print()
     # Border
     print("=============================================================\n")
+
+def seatSearch(numberOfSeats, section):
+    if section == 'F':
+        startRow = 0
+        endRow = 6
+    elif section == 'M':
+        startRow = 5
+        endRow = 11
+    elif section == 'B':
+        startRow = 10
+        endRow = 20
+    else:
+        return "Invalid Section Detected\n"
+
+    seatsRequested = numberOfSeats
+    seatsSearched = 0
+    n_col = 26
+    seatsConfirmed = []
+
+    for row in range(startRow, endRow):
+        for col in range(n_col):
+            if status(row, col) == 'a':
+                seatsSearched += 1
+                if seatsSearched == seatsRequested:
+                    while seatsSearched != 0:
+                        seat = [row, (col - (seatsSearched - 1))]
+                        seatsConfirmed.append(seat)
+                        seatsSearched -= 1
+                    return seatsConfirmed
+            elif (status(row, col) == 'x') or (status(row,col) == 'n'):
+                seatsSearched = 0
+            
+
+    return "No seats available in this section"
+
+displaySeatingChart()
+print(seatSearch(6, 'B'))
