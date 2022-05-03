@@ -1,6 +1,10 @@
 from string import ascii_uppercase
 import json
 
+"""
+This test module is for experimenting creating my seating charts and loading them to a json
+"""
+
 row = []
 col = []
 i = 0
