@@ -200,7 +200,7 @@ def updateSeatingChart(seatList):
     jsonObject = json.dumps(updatedSeatingList, indent = 4)
 
     # Write to seating.json
-    with open("test.json", "w") as outfile:
+    with open("seating.json", "w") as outfile:
         outfile.write(jsonObject)
 
     #print(updatedSeatingList)
@@ -233,7 +233,7 @@ def reinitializeJson():
     json_object = json.dumps(seatingList, indent = 4)
 
     #write to test.json
-    with open("test.json", "w") as outfile:
+    with open("seating.json", "w") as outfile:
         outfile.write(json_object)
 
 
