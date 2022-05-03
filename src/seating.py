@@ -1,5 +1,6 @@
 import io
 import json
+from string import ascii_uppercase
 
 """
     Module: seating
@@ -64,11 +65,6 @@ def displaySeatingChart():
     n_col = 26
     h_row= 1
 
-    # Names of colums for alpha numeric seating
-    colList = ["A", "B", "C", "D", "E", "F", "G", "H", "I",
-            "J", "K", "L", "M", "N", "O", "P", "Q", "R", 
-            "S", "T", "U", "V", "W", "X", "Y", "Z"]
-
     # Border
     print("=============================================================")
     # Print explanation of chart
@@ -83,8 +79,8 @@ def displaySeatingChart():
         # Start row with a tab
         print(end="\t")
         # Continue to iterate through the column names
-        for c in range(n_col):
-            print(colList[c], end=" ")
+        for letter in ascii_uppercase:
+            print(letter, end=" ")
         
     print("\n") #Blank line to break up display
     for r in range(n_row):
@@ -129,5 +125,40 @@ def seatSearch(numberOfSeats, section):
 
     return "No seats available in this section"
 
-displaySeatingChart()
-print(seatSearch(6, 'B'))
+def updateSeatingChart(seatList):
+    
+    seats = seatList
+
+    # Import data from json
+    data = read()
+
+    # Store data into dict
+    seatingDict = {}
+
+    # Read data into dictionary
+    for elem in data:
+        r = elem["row"]
+        c = elem["col"]
+        s = elem["status"]
+
+        # Set key values to status
+        seatingDict[(r, c)] = s
+
+    for seat in seats:
+        seatingDict.update({(seat[0], seat[1]): "n"})
+
+    print(seatingDict)
+
+    
+
+listA = [[0, 0], [0, 1]]
+listB = listA[-1]
+# Use this algorithm for social distancing seats
+emptySeat1 = [listB[0], (listB[-1] + 1)]
+emptySeat2 = [listB[0], (listB[-1] + 2)]
+print(emptySeat1)
+print(emptySeat2)
+
+#updateSeatingChart(listA) 
+#displaySeatingChart()
+#print(seatSearch(6, 'B'))
