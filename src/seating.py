@@ -124,7 +124,7 @@ def seatSearch(numberOfSeats, section):
     n_col = 26
     # Empty list to store seat data
     seatsConfirmed = []
-
+    noSeatsConfirmed = [99, 99]
     # Iterate through each row in section
     for row in range(startRow, endRow):
         # Iterate through each col in row
@@ -145,8 +145,8 @@ def seatSearch(numberOfSeats, section):
             elif (status(row, col) == 'x') or (status(row,col) == 'n'):
                 # Reset counter and keep looking
                 seatsSearched = 0
-            elif (row == endRow-1) and (col == 25) and (seatsSearched != seatsRequested):
-                return 0
+            
+            return noSeatsConfirmed
     
 
 def updateSeatingChart(seatList):
@@ -232,8 +232,3 @@ def reinitializeJson():
     #write to test.json
     with open("seating.json", "w") as outfile:
         outfile.write(json_object)
-
-
-
-seats = seatSearch(5, 'F')
-print(seats)

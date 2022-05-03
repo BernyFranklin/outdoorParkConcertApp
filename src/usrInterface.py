@@ -65,6 +65,8 @@ def runApp(userName):
 
         # [B]
         elif firstChar == 'B':
+            #initialize seats
+            seats = []
             # Call tickets.quantity for numeric verification
             qtyOfTix = tickets.quantity()
             
@@ -76,12 +78,13 @@ def runApp(userName):
             selectedSection = tickets.section()
             # Search for seats in that section, store seats
             seats = seating.seatSearch(int(qtyOfTix), selectedSection)
-            # If no seats available break out
-            if seats == 0:
-                print("There aren't any seats left in that section for qty requested")
+            
+            #If no seats available break out
+            if seats[1] == 99:
+               print("\nThere aren't any seats left in that section for qty requested\n")
             else:
-                total = tickets.compute(qtyOfTix, selectedSection)
-                seating.updateSeatingChart(seats)
+               total = tickets.compute(qtyOfTix, selectedSection)
+               seating.updateSeatingChart(seats)
 
         # [S]
         elif firstChar == 'S':
