@@ -233,5 +233,3 @@ def reinitializeJson():
     with open("seating.json", "w") as outfile:
         outfile.write(json_object)
 
-s = seatSearch(5, 'F')
-print(s)

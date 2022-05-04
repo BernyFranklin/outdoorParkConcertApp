@@ -16,20 +16,20 @@ def quantity():
     # Start loop
     while not number and not positive:
         try:
-            qtyOfTix = input("Please enter how many tickets you would like to purchase: ")
+            qtyOfTix = input("\nPlease enter how many tickets you would like to purchase: ")
             number = isNumeric(qtyOfTix)
             if int(qtyOfTix) > 0:
                 positive = True
             elif int(qtyOfTix) == 0:
-                print("Zero tickets selected, returning to main menu")
+                print("\nZero tickets selected, returning to main menu")
                 print()
                 break
             else:
-                print("Number of tickets must be positive number")
+                print("\nNumber of tickets must be positive number")
                 print()
 
         except ValueError:
-            print("Please enter numbers only")
+            print("\nPlease enter numbers only")
             print()
     return qtyOfTix
 
@@ -102,7 +102,7 @@ def compute(qty, section):
     finalTotal = subTotal + totalTax + fee
 
     # Print subtotal
-    print("========================================")
+    print("\n========================================")
     print("         Transaction Summary\n")
     print("Qty:         ", str(q), " @ ", str("$ {:.2f}".format(price)))
     print("Section:             ", str(sString))
