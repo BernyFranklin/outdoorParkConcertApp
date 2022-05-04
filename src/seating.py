@@ -146,7 +146,7 @@ def seatSearch(numberOfSeats, section):
                 # Reset counter and keep looking
                 seatsSearched = 0
             
-            return noSeatsConfirmed
+    return noSeatsConfirmed
     
 
 def updateSeatingChart(seatList):
@@ -232,3 +232,6 @@ def reinitializeJson():
     #write to test.json
     with open("seating.json", "w") as outfile:
         outfile.write(json_object)
+
+s = seatSearch(5, 'F')
+print(s)
