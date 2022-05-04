@@ -233,3 +233,4 @@ def reinitializeJson():
     with open("seating.json", "w") as outfile:
         outfile.write(json_object)
 
+reinitializeJson()

@@ -41,16 +41,16 @@ def runApp(userName):
     # Start menu loop
     while not userQuit:
 
-        print("========================================")
+        print("\n========================================")
         print("Welcome " + user)
         print()
-        print("Please select from the following options")
+        print("Please select from the following options\n")
         print("[V] View Seating")
         print("[B] Buy tickets")
         print("[S] Search by email")
         print("[D] Display all purchases")
         print("[Q] Quit")
-        print("========================================")
+        print("\n========================================\n")
         
         # Collect userOption, covert to lower, and take firstChar
         userOption = input("Please enter a command: ")
@@ -96,7 +96,7 @@ def runApp(userName):
 
         # [Q]
         elif firstChar == 'Q':
-            print("Thank you for using the FrankFest App\n")
+            print("\nThank you for using the FrankFest App\n")
             userQuit = True
 
         # Invalid

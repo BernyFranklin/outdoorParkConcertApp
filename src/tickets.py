@@ -49,7 +49,7 @@ def section():
     # Loop for valid input
     while (charSection != 'F') or (charSection != 'M') or (charSection != 'B'):
         # Read input from keyboard
-        userSection = input("Enter a selection: ")
+        userSection = input("\nEnter a selection: ")
         # Convert to upper
         upperSection = userSection.upper()
         # Pull first char
