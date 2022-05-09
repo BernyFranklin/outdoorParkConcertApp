@@ -80,13 +80,16 @@ def runApp(userName):
             # Search for seats in that section, store seats
             seats = seating.seatSearch(int(qtyOfTix), selectedSection)
             
+            # Store the User's name for purchase data and search by name
+            name = input("Please enter your name for confirmation: ")
+
             #If no seats available break out
             if seats[1] == 99:
                print("\nThere aren't any seats left in that section for qty requested\n")
             else:
                total = tickets.compute(qtyOfTix, selectedSection)
                seating.updateSeatingChart(seats)
-               purchases.addTransaction(user, qtyOfTix, selectedSection, total)
+               purchases.addTransaction(user, name, qtyOfTix, selectedSection, total)
 
         # [S]
         elif firstChar == 'S':

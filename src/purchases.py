@@ -7,7 +7,7 @@ import json
     Description: This module will handle all aspects of handling transaction data
 """
 
-def addTransaction(email, numOfTix, section, total):
+def addTransaction(email, name, numOfTix, section, total):
     """
     This function opens purchaseData.json and stores the data into a list called purchaseList.
     A dictionary is created for the purchase data called transactionDict. 
@@ -17,6 +17,7 @@ def addTransaction(email, numOfTix, section, total):
     purchaseList = seating.read("purchaseData")
     # Dictionary created with passed data
     transactionDict = { "email": email,
+                        "name": name,
                         "qty": numOfTix,
                         "section": section,
                         "total": total }
