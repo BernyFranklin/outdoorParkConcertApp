@@ -235,3 +235,5 @@ def reinitializeSeatingJson():
     with open("seating.json", "w") as outfile:
         outfile.write(json_object)
 
+# Uncomment and run this module to reinitialize the seating.json file
+#reinitializeSeatingJson()
