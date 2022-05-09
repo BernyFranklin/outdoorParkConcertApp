@@ -2,6 +2,7 @@ import io
 import login
 import tickets
 import seating
+import purchases
 
 
 
@@ -85,6 +86,7 @@ def runApp(userName):
             else:
                total = tickets.compute(qtyOfTix, selectedSection)
                seating.updateSeatingChart(seats)
+               purchases.addTransaction(user, qtyOfTix, selectedSection, total)
 
         # [S]
         elif firstChar == 'S':

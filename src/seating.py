@@ -1,3 +1,4 @@
+from fileinput import filename
 import io
 import json
 from string import ascii_uppercase
@@ -7,18 +8,20 @@ from string import ascii_uppercase
     Description: this module handles everything for seating
 """
 
-def read():
+def read(fileName):
     """
     This function opens the seating.json file and reads the data into 
     a variable.
     """
 
     # Path to seating.json
-    filePath = "/Users/frankbernal/Documents/GitHub/outdoorParkConcertApp/src/seating.json"
+    filePath = "/Users/frankbernal/Documents/GitHub/outdoorParkConcertApp/src/"
+    file = fileName
+    fileToOpen = str(filePath) + str(file) + ".json"
 
     # Open file
     try:
-        fileHandle = open(filePath)
+        fileHandle = open(fileToOpen)
     except IOError:
         print("Error loading file")
         raise IOError
@@ -36,7 +39,7 @@ def status(row, col):
     Seat selection status displayed based on params row and col
     """
     # Read json into a variable
-    data = read()
+    data = read("seating")
 
     # Create empty dictionary
     seatingDict = {}
@@ -55,8 +58,8 @@ def status(row, col):
         stat = seatingDict[(row, col)]
         return stat
     except KeyError:
+        # Return status of seat
         return "Seat selection out of range"
-    # Return status of seat
 
 def displaySeatingChart():
     """
@@ -148,7 +151,6 @@ def seatSearch(numberOfSeats, section):
             
     return noSeatsConfirmed
     
-
 def updateSeatingChart(seatList):
     """
     This function updates the seatingDict statuses from available to unavailable,
@@ -163,7 +165,7 @@ def updateSeatingChart(seatList):
     emptySeat2 = [lastSeat[0], (lastSeat[-1] + 2)]   # lastSeat +2
 
     # Import data from json
-    data = read()
+    data = read("seating")
 
     # Store data into dict
     seatingDict = {}
@@ -202,7 +204,7 @@ def updateSeatingChart(seatList):
     with open("seating.json", "w") as outfile:
         outfile.write(jsonObject)
 
-def reinitializeJson():
+def reinitializeSeatingJson():
     """
     This function reinitiliazes the json to display an empty venue.
     """
@@ -233,4 +235,3 @@ def reinitializeJson():
     with open("seating.json", "w") as outfile:
         outfile.write(json_object)
 
-reinitializeJson()
