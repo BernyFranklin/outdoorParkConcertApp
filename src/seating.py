@@ -72,6 +72,8 @@ def displaySeatingChart():
     h_row= 1
 
     # Border
+    print("\n=============================================================")
+    print("                         View Seating                        ")
     print("=============================================================")
     # Print explanation of chart
     print("a = Available")
@@ -94,9 +96,7 @@ def displaySeatingChart():
         for c in range(n_col):
             print(status(r, c), end=" ")
         print()
-    # Border
-    print("=============================================================\n")
-
+    
 def seatSearch(numberOfSeats, section):
     """
     This function uses section input for start and stop params for the range() function

@@ -43,9 +43,10 @@ def runApp(userName):
     while not userQuit:
 
         print("\n========================================")
+        print("                Main Menu               ")
+        print("========================================")
         print("Welcome " + user)
-        print()
-        print("Please select from the following options\n")
+        print("\nPlease select from the following options\n")
         print("[V] View Seating")
         print("[B] Buy tickets")
         print("[S] Search by email")
@@ -66,6 +67,10 @@ def runApp(userName):
 
         # [B]
         elif firstChar == 'B':
+            # Print menu selection
+            print("========================================")
+            print("              Buy Tickets               ")
+            print("========================================")
             #initialize seats
             seats = []
             # Call tickets.quantity for numeric verification

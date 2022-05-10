@@ -13,24 +13,30 @@ def quantity():
     # Prime loop
     number = False
     positive = False
+    under15 = False
+    qtyOfTix = 0
     # Start loop
-    while not number and not positive:
+    while not number or not positive or not under15:
         try:
             qtyOfTix = input("\nPlease enter how many tickets you would like to purchase: ")
             number = isNumeric(qtyOfTix)
-            if int(qtyOfTix) > 0:
-                positive = True
-            elif int(qtyOfTix) == 0:
-                print("\nZero tickets selected, returning to main menu")
-                print()
+            positive = (int(qtyOfTix) > 0)
+            under15 = (int(qtyOfTix) <= 15)   # Max number of tickets
+            # If negative
+            if not positive:
+                print("Quantity must be a positive number")
+            # If too many tickets
+            if not under15:
+                print("Quantity may not exceed 15 tickets")
+            # If zero selected
+            if int(qtyOfTix) == 0:
+                print("\nZero tickets selected, returning to main menu\n")
                 break
-            else:
-                print("\nNumber of tickets must be positive number")
-                print()
-
+           
         except ValueError:
-            print("\nPlease enter numbers only")
-            print()
+            print("\nPlease enter numbers only\n")
+
+    # After validity check return number
     return qtyOfTix
 
 def section():
@@ -115,7 +121,4 @@ def compute(qty, section):
     # Return final total for transaction object
     return finalTotal
 
-    
-
-
-
+quantity()
