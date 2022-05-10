@@ -91,6 +91,8 @@ def runApp(userName):
             
             # Store the User's name for purchase data and search by name
             name = input("Please enter your name for confirmation: ")
+            # Convert to title (capitalizes 1st letter of each word)
+            name = name.title()
 
             #If no seats available break out
             if seats[1] == 99:

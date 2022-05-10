@@ -842,27 +842,27 @@
     {
         "row": 6,
         "col": 12,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 13,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 14,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 15,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 6,
         "col": 16,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 6,
