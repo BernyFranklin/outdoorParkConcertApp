@@ -1,5 +1,4 @@
 import seating
-import io
 import json
 
 """

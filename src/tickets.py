@@ -83,7 +83,7 @@ def isNumeric(qty):
 
 def compute(qty, section):
     """
-    This module computes the total price and returns the total
+    This module computes the total price for selected qty and section and returns the total
     """
 
     q = qty         # Sent from UI
@@ -120,5 +120,3 @@ def compute(qty, section):
 
     # Return final total for transaction object
     return finalTotal
-
-quantity()

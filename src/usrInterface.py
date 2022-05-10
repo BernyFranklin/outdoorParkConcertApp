@@ -10,10 +10,14 @@ import purchases
     Module: userInterface
     Description: This module presents a welcome prompt, 
                  login prompt to store user data purchase, 
-                and interface to navigate purchases.
+                 and interface to navigate purchases.
+                 This is the main module that runs throughout the app.
 """
 
 def start():
+    """
+    This function prints a banner to welcome the user, calls for login, and runs the app passing the userName
+    """
     print()
     print("========================================")
     print("  Welcome to FrankFest Music Festival   ")
@@ -30,7 +34,7 @@ def start():
 def runApp(userName):
     """
     This function welcomes the user by email, gives options to view seating, purchase tickets,
-    search by email, display all purchases or quit
+    search by name, display all purchases or quit
     """
 
     # Store userName for purchase info
@@ -49,7 +53,7 @@ def runApp(userName):
         print("\nPlease select from the following options\n")
         print("[V] View Seating")
         print("[B] Buy tickets")
-        print("[S] Search by email")
+        print("[S] Search by name")
         print("[D] Display all purchases")
         print("[Q] Quit")
         print("\n========================================\n")

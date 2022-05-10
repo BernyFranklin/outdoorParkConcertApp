@@ -1,4 +1,3 @@
-from fileinput import filename
 import io
 import json
 from string import ascii_uppercase
