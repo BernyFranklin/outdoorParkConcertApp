@@ -85,3 +85,41 @@ def printAllTransactions():
     print("Entire venue:\t" +str(totalCount))
     print("\nGrand total:\t" + str("${:.2f}\n".format(grandTotal)))
     
+def searchByName():
+    """
+    This function will search transactions by name and display the data associated with that name.
+    """
+    #Print menu selection
+    print("\n========================================")
+    print("             Search By Name            ")
+    print("=======================================\n")
+
+    # Store data from JSON into a list
+    listOfTransactions = seating.read("purchaseData")
+
+    # Ask for user's search name
+    nameToSearch = input("Enter a name to search: ")
+    # Convert to title
+    nameToSearch = nameToSearch.title()
+
+    # Keep track of matches
+    matchCount = 0
+    # Iterate through data
+    for transaction in listOfTransactions:
+        # If name matches name in dict element, print the data
+        if nameToSearch in transaction["name"]:
+            print("------------------------------")
+            print("Name:\t\t\t" + str(transaction["name"]))
+            print("Section:\t\t" + str(transaction["section"]))
+            print("Number of tickets:\t" + str(transaction["qty"] + "\n"))
+            matchCount += 1
+    
+    # If no matches, inform user
+    if matchCount == 0:
+        print("\nSorry, we didn't find any purchases under that name\n")
+    # If 1 match print "match"
+    elif matchCount == 1:
+        print("We found " + str(matchCount) + " match with the name " + nameToSearch + "\n")
+    # If more matches print "matches"
+    else:
+        print("We found " + str(matchCount) + " matches with the name " + nameToSearch + "\n")

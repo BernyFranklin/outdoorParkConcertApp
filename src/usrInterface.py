@@ -104,7 +104,7 @@ def runApp(userName):
 
         # [S]
         elif firstChar == 'S':
-            print("Search selected")
+            purchases.searchByName()
 
         # [D]
         elif firstChar == 'D':
