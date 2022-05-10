@@ -77,10 +77,10 @@ def displaySeatingChart():
     # Print explanation of chart
     print("a = Available")
     print("n = Not Available")
-    print("x = Social Distancing Barriers")
+    print("x = Social Distancing Barriers\n")
      
     # Print available seating
-    print() # Blank line to break up display
+
     # Used to start a new row
     for r in range(h_row):
         # Start row with a tab
@@ -126,7 +126,9 @@ def seatSearch(numberOfSeats, section):
     n_col = 26
     # Empty list to store seat data
     seatsConfirmed = []
+    # Value to send if no seats available
     noSeatsConfirmed = [99, 99]
+    
     # Iterate through each row in section
     for row in range(startRow, endRow):
         # Iterate through each col in row

@@ -43,17 +43,18 @@ def section():
     """
     This function Prompts user for desired section and returns a valid char
     """
-     # Prompt for section selection  
-    print()
-    print("Please select a section")
+     # Prompt for section selection
+    print("\nPlease select a section")
     print("[F] Front  $80")
     print("[M] Middle $50")
     print("[B] Back   $25")
 
     # Prime loop
     charSection = ""
+    valid = False
+
     # Loop for valid input
-    while (charSection != 'F') or (charSection != 'M') or (charSection != 'B'):
+    while not valid:
         # Read input from keyboard
         userSection = input("\nEnter a selection: ")
         # Convert to upper
@@ -63,7 +64,7 @@ def section():
 
         # Validate Entry
         if (charSection == 'F') or (charSection == 'M') or (charSection == 'B') :
-            break
+            valid = True
         else:
             print("Please select a valid section")
 
