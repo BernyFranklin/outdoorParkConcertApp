@@ -2,37 +2,37 @@
     {
         "row": 0,
         "col": 0,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 0,
         "col": 1,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 0,
         "col": 2,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 0,
         "col": 3,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 0,
         "col": 4,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 0,
         "col": 5,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 0,
         "col": 6,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 0,
@@ -782,62 +782,62 @@
     {
         "row": 6,
         "col": 0,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 1,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 2,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 3,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 4,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 5,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 6,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 7,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 8,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 9,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 6,
         "col": 10,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 6,
         "col": 11,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 6,
@@ -1302,27 +1302,27 @@
     {
         "row": 10,
         "col": 0,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 10,
         "col": 1,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 10,
         "col": 2,
-        "status": "a"
+        "status": "n"
     },
     {
         "row": 10,
         "col": 3,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 10,
         "col": 4,
-        "status": "a"
+        "status": "x"
     },
     {
         "row": 10,

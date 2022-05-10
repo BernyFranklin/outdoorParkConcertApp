@@ -28,3 +28,61 @@ def addTransaction(email, name, numOfTix, section, total):
     # JSON updated with new data
     with open("purchaseData.json", "w") as purchaseFile:
         purchaseFile.write(jsonObject)
+
+def printAllTransactions():
+    """
+    This function prints a list of all transactions to include name, number of tickets sold, section, and total.
+    Counts are kept for how many tickets in each section and the entire venue, as well as grand total for event.
+    At the end of the list data for each section, venue, and grand total are displayed. 
+    """
+    # Load data from json file to list
+    transactionList = seating.read("purchaseData")
+
+    # Keep track of how many transactions and how many each section
+    transactionCount = 0
+    frontCount = 0
+    middleCount = 0
+    backCount = 0
+    totalCount = 0
+    grandTotal = 0.0
+
+    # Header for selection
+    print("========================================")
+    print("         Display All Purchases          ")
+    # Iterate through items
+    for i in transactionList:
+        # Count the transaction
+        transactionCount += 1
+        
+        # Count for each section
+        if i["section"] == "F":
+            frontCount += int(i["qty"])
+        elif i["section"] == "M":
+            middleCount += int(i["qty"])
+        elif i["section"] == "B":
+            backCount += int(i["qty"])
+
+        # Add transaction total to grandTotal
+        grandTotal += i["total"]
+
+        # Print data for each transaction
+        print("========================================")
+        print("Transaction: " + str(transactionCount))
+        print("Name:\t\t\t" + str(i["name"]))
+        print("Number of Tickets:\t" + str(i["qty"]))
+        print("Section:\t\t" + str(i["section"]))
+        print("Total:\t\t\t" + str("${:.2f}\n".format(i["total"])))
+    
+    # Calculate total of tickets sold
+    totalCount = frontCount + middleCount + backCount
+
+    # Print totals for entire event
+    print("========================================")
+    print("             Total purchases            ")
+    print("========================================")
+    print("Front section:\t" + str(frontCount))
+    print("Middle section:\t" + str(middleCount))
+    print("Back section:\t" + str(backCount))
+    print("Entire venue:\t" +str(totalCount))
+    print("\nGrand total:\t" + str("${:.2f}\n".format(grandTotal)))
+    

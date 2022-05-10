@@ -97,7 +97,7 @@ def runApp(userName):
 
         # [D]
         elif firstChar == 'D':
-            print("Display purchases selected")
+            purchases.printAllTransactions()
 
         # [Q]
         elif firstChar == 'Q':

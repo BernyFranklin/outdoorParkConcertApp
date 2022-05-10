@@ -1,1 +1,23 @@
-[]
+[
+    {
+        "email": "frank@email.com",
+        "name": "Frank Bernal",
+        "qty": "5",
+        "section": "F",
+        "total": 434.0
+    },
+    {
+        "email": "bill@email.com",
+        "name": "Bill Yates",
+        "qty": "10",
+        "section": "M",
+        "total": 541.25
+    },
+    {
+        "email": "ana@email.com",
+        "name": "Anastazja Rose",
+        "qty": "3",
+        "section": "B",
+        "total": 85.4375
+    }
+]
