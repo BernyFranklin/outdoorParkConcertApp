@@ -1,3 +1,4 @@
+# seating.py
 import io
 import json
 from string import ascii_uppercase

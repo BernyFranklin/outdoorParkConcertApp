@@ -47,5 +47,12 @@
         "qty": "2",
         "section": "F",
         "total": 176.6
+    },
+    {
+        "email": "Boba@email.com",
+        "name": "Boba Fett",
+        "qty": "4",
+        "section": "M",
+        "total": 219.5
     }
 ]

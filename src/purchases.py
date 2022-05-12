@@ -1,3 +1,4 @@
+# purchases.py
 import seating
 import json
 
