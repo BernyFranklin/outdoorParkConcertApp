@@ -99,7 +99,7 @@ def searchByName():
 
     # Ask for user's search name
     nameToSearch = input("Enter a name to search: ")
-    # Convert to title
+    # Convert to title to match format of json
     nameToSearch = nameToSearch.title()
 
     # Keep track of matches

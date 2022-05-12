@@ -58,7 +58,7 @@ def runApp(userName):
         print("[Q] Quit")
         print("\n========================================\n")
         
-        # Collect userOption, covert to lower, and take firstChar
+        # Collect userOption, covert to upper, and take firstChar
         userOption = input("Please enter a command: ")
         upperOption = userOption.upper()
         firstChar = upperOption[0:1]
@@ -67,6 +67,7 @@ def runApp(userName):
 
         # [V]
         if firstChar == 'V':
+            # Call seating.displaySeatingChart(), prints current seating
            seating.displaySeatingChart() 
 
         # [B]
@@ -86,7 +87,8 @@ def runApp(userName):
             
             # Call tickets.section for char selection
             selectedSection = tickets.section()
-            # Search for seats in that section, store seats
+            # Call seating.seatSearch() for the requested qty of seats in that section 
+            # and store seats
             seats = seating.seatSearch(int(qtyOfTix), selectedSection)
             
             # Store the User's name for purchase data and search by name
@@ -96,30 +98,34 @@ def runApp(userName):
 
             #If no seats available break out
             if seats[1] == 99:
+               # Inform user there aren't enough seats to fill request
                print("\nThere aren't any seats left in that section for qty requested\n")
+            # Seats were found
             else:
+               # Call tickets.compute() passing qty and section, store double
                total = tickets.compute(qtyOfTix, selectedSection)
+               # Call seating.updateSeatingChart() passing assigned seats to update JSON file
                seating.updateSeatingChart(seats)
+               # Call purchases.addTransaction() passing all purchase info to update JSON file
                purchases.addTransaction(user, name, qtyOfTix, selectedSection, total)
 
         # [S]
         elif firstChar == 'S':
+            # Call purchases.searchByName() to initiate search
             purchases.searchByName()
 
         # [D]
         elif firstChar == 'D':
+            # Call purchases.printAllTransactions() to print all transactions and total $
             purchases.printAllTransactions()
 
         # [Q]
         elif firstChar == 'Q':
+            # Print thank you and exit the loop, ends program
             print("\nThank you for using the FrankFest App\n")
             userQuit = True
 
         # Invalid
         else:
+            # Let the user know they're option no worky
             print("Invlid selection, please try again")
-
-
-
-
-   

@@ -9,13 +9,15 @@ from string import ascii_uppercase
 
 def read(fileName):
     """
-    This function opens the seating.json file and reads the data into 
+    This function opens the seating.json or purchaseData.json file and reads the data into 
     a variable.
     """
 
     # Path to seating.json
     filePath = "/Users/frankbernal/Documents/GitHub/outdoorParkConcertApp/src/"
+    # String passed to function, either 'seating' or 'purchaseData'
     file = fileName
+    # Concat the full path for the file
     fileToOpen = str(filePath) + str(file) + ".json"
 
     # Open file
@@ -25,7 +27,7 @@ def read(fileName):
         print("Error loading file")
         raise IOError
 
-    # Read the file
+    # Read the file and store into variable
     data = json.load(fileHandle)
 
     # Return variable to caller
@@ -85,7 +87,7 @@ def displaySeatingChart():
     for r in range(h_row):
         # Start row with a tab
         print(end="\t")
-        # Continue to iterate through the column names
+        # Continue to iterate through the column names A-Z
         for letter in ascii_uppercase:
             print(letter, end=" ")
         
@@ -126,7 +128,7 @@ def seatSearch(numberOfSeats, section):
     n_col = 26
     # Empty list to store seat data
     seatsConfirmed = []
-    # Value to send if no seats available
+    # Value to send if no seats available, sentinel value
     noSeatsConfirmed = [99, 99]
     
     # Iterate through each row in section

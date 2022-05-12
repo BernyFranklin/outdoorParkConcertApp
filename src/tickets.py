@@ -18,10 +18,14 @@ def quantity():
     # Start loop
     while not number or not positive or not under15:
         try:
+            # Prompt for input
             qtyOfTix = input("\nPlease enter how many tickets you would like to purchase: ")
+            # Pass input to isNumeric(), bool value
             number = isNumeric(qtyOfTix)
+            # Test for positive input, bool value
             positive = (int(qtyOfTix) > 0)
-            under15 = (int(qtyOfTix) <= 15)   # Max number of tickets
+            # Test for max number of tickets (15), bool value
+            under15 = (int(qtyOfTix) <= 15)   
             # If negative
             if not positive:
                 print("Quantity must be a positive number")
@@ -32,11 +36,11 @@ def quantity():
             if int(qtyOfTix) == 0:
                 print("\nZero tickets selected, returning to main menu\n")
                 break
-           
+        # Catch non number values
         except ValueError:
             print("\nPlease enter numbers only\n")
 
-    # After validity check return number
+    # After validity check, return int qtyOfTix
     return qtyOfTix
 
 def section():
@@ -64,21 +68,24 @@ def section():
 
         # Validate Entry
         if (charSection == 'F') or (charSection == 'M') or (charSection == 'B') :
+            # Set true to break out of loop
             valid = True
         else:
+            # Alert user invalid selection, loop continues
             print("Please select a valid section")
-
+    # Returns valid section
     return charSection
 
 def isNumeric(qty):
     """
-    This function verifies ticket quantity is numeric and returns a bool
+    This function verifies ticket quantity is numeric using regex and returns a bool
     """
-
+    # Sets regex criteria
     numeric = re.compile(r'([0-9])+')
-
+    # If matches criteria, set true
     if re.fullmatch(numeric, qty):
         return True
+    # If not set false
     else:
         return False
 
@@ -111,13 +118,13 @@ def compute(qty, section):
     # Print subtotal
     print("\n========================================")
     print("         Transaction Summary\n")
-    print("Qty:         ", str(q), " @ ", str("$ {:.2f}".format(price)))
-    print("Section:             ", str(sString))
-    print("Subtotal:           $", str("{:.2f}".format(subTotal)))
-    print("Tax:                $", str("{:.2f}".format(totalTax)))
-    print("Mandatory Mask Fee: $", str("{:.2f}".format(fee)))
+    print("Qty:\t\t", str(q), " @\t", str("${:.2f}".format(price)))
+    print("Section:\t\t", str(sString))
+    print("Subtotal:\t\t", str("${:.2f}".format(subTotal)))
+    print("Tax:\t\t\t", str("${:.2f}".format(totalTax)))
+    print("Mandatory Mask Fee:\t", str("${:.2f}".format(fee)))
     print("\n")
-    print("Total:              $", str("{:.2f}".format(finalTotal)))
+    print("Total:\t\t\t", str("${:.2f}".format(finalTotal)))
 
     # Return final total for transaction object
     return finalTotal
